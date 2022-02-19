@@ -6,9 +6,7 @@ var Filter = require('../lib/badwords.js'),
 describe('filter', function(){
 	describe('clean',function(){
 		it('Should replace a bad word within a sentence asterisks (******)',function(){
-			console.log(filter.clean('Don\'t be an ash0le'));
 			assert(filter.clean('Don\'t be an ash0le') === 'Don\'t be an ******');
-
 		});
 
 		it('Should replace multiple instances of any bad words within a sentence asterisks (******)',function(){
@@ -38,10 +36,22 @@ describe('filter', function(){
 
 		xit('Should filter words that are derivatives of words from the filter blacklist', function() {
 			assert(filter.clean('shitshit') === '********');
-    });
+    	});
 
-    it('Shouldn\'t filter words that aren\'t profane.', function() {
+    	it('Shouldn\'t filter words that aren\'t profane.', function() {
 			assert(filter.clean('hello there') === 'hello there');
-    });
+		});
+		it('Should only use Spanish dictionary to filter', function() {
+			filter = new Filter({languages: ['es']});
+			assert(filter.clean('fucking asshole') == 'fucking asshole');
+			assert(filter.clean('pinche pendejo') == '****** *******');
+		});
+	  
+		it('Should only use English dictionary to filter', function() {
+			filter = new Filter({languages: ['en']});
+			assert(filter.clean('pinche pendejo') == 'pinche pendejo');
+			assert(filter.clean('asshole') == '*******');
+		});
+	  
 	});
 });

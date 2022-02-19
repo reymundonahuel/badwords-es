@@ -19,6 +19,5 @@ describe('options', function() {
       assert(filter.clean('mot en français') == 'mot en *******');
     });
 
-
   });
 });

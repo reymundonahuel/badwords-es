@@ -15,6 +15,7 @@ describe('filter', function(){
 
 		it("Should be able to detect a bad word in a sentence",function(){
 			assert(filter.isProfane("that person is an ash0le"));
+			assert(filter.isProfane("hola pinche"));
 		});
 
 		it('Filters out special characters appropriately', function() {

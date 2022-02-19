@@ -1,6 +1,6 @@
 {
-  "name": "bad-words",
-  "version": "3.0.4",
+  "name": "bad-words-es",
+  "version": "1.0.0",
   "description": "A javascript filter for bad words",
   "main": "./lib/badwords",
   "directories": {
@@ -17,6 +17,8 @@
   "keywords": [
     "curse",
     "words",
+    "groserias",
+    "malas palabras",
     "profanity",
     "filter"
   ],
@@ -28,7 +30,7 @@
     "documentation": "^5.3.3",
     "mocha": "^5.2.0"
   },
-  "author": "Mike P.",
+  "author": "Moises Laris",
   "license": "MIT",
   "engines": {
     "node": ">=8.0.0"

@@ -1,7 +1,7 @@
 {
   "name": "bad-words-es",
   "version": "1.0.0",
-  "description": "A javascript filter for bad words",
+  "description": "A forked javascript filter for bad words in spanish and english",
   "main": "./lib/badwords",
   "directories": {
     "test": "test"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/web-mech/badwords.git"
+    "url": "git://github.com/MoisesLaris/badwords-es.git"
   },
   "keywords": [
     "curse",
@@ -20,6 +20,8 @@
     "groserias",
     "malas palabras",
     "profanity",
+    "spanish",
+    "es",
     "filter"
   ],
   "dependencies": {

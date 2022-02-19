@@ -17,7 +17,7 @@ As of version 2, requires you either have an environment that understands ES2016
 ## Usage
 
 ```js
-var Filter = require('bad-words'),
+var Filter = require('bad-words-es'),
     filter = new Filter();
 
 console.log(filter.clean("Don't be an ash0le")); //Don't be an ******
@@ -26,7 +26,7 @@ console.log(filter.clean("Don't be an ash0le")); //Don't be an ******
 ### Placeholder Overrides
 
 ```js
-var Filter = require('bad-words');
+var Filter = require('bad-words-es');
 var customFilter = new Filter({ placeHolder: 'x'});
 
 customFilter.clean("Don't be an ash0le"); //Don't be an xxxxxx
@@ -39,6 +39,17 @@ var filter = new Filter({ regex: /\*|\.|$/gi });
 
 var filter = new Filter({ replaceRegex:  /[A-Za-z0-9가-힣_]/g }); 
 //multilingual support for word filtering
+```
+
+### Select language
+```js
+var Filter = require('bad-words-es');
+
+//It will only filter bad words in Spanish.
+var filter = new Filter({languages: ['es']});
+
+filter.clean("Don't be an assh0le"); //Don't be an assh0le
+filter.clean("Hola pendejo"); //Hola *******
 ```
 
 ### Add words to the blacklist
@@ -116,6 +127,7 @@ Filter constructor.
     -   `options.regex` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Regular expression used to sanitize words before comparing them to blacklist.
     -   `options.replaceRegex` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Regular expression used to replace profane words with placeHolder.
     -   `options.splitRegex` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Regular expression used to split a string into words.
+    -   `options.languages` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** List of the languages to use. By default it will use both Spanish and English.
 
 #### isProfane
 

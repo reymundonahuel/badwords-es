@@ -21,6 +21,7 @@ var Filter = require('bad-words-es'),
     filter = new Filter();
 
 console.log(filter.clean("Don't be an ash0le")); //Don't be an ******
+console.log(filter.clean("No seas pendej0")); //No seas pendej0
 ```
 
 ### Placeholder Overrides
